@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALTYNSARIN DIGITAL</title>
+
+<style>
+
+/* =========================
+   ОСНОВА
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08151c;
+    color: #f5f0e6;
+    line-height: 1.6;
+}
+
+button,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    padding: 90px 6%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   НАВИГАЦИЯ
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(8, 21, 28, 0.97);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    padding: 15px 6%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    color: #e9c46a;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #dce7e8;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #e9c46a;
+}
+
+
+/* =========================
+   ЯЗЫКИ
+========================= */
+
+.languages {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    background: transparent;
+
+    color: #dce7e8;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius: 8px;
+
+    padding: 7px 10px;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+    background: #e9c46a;
+    color: #08151c;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(39,125,161,0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(233,196,106,0.12),
+            transparent 30%
+        );
+}
+
+.hero-small {
+    color: #e9c46a;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 95px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #e9c46a;
+}
+
+.hero-question {
+    font-size: clamp(22px, 3vw, 35px);
+
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 750px;
+
+    color: #a9b8bb;
+
+    font-size: 17px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   КНОПКИ
+========================= */
+
+.btn {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 13px 20px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #e9c46a;
+
+    color: #08151c;
+}
+
+.btn-primary:hover {
+    background: #f1d27f;
+
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+
+    color: #f5f0e6;
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+}
+
+.btn-secondary:hover {
+    border-color: #e9c46a;
+
+    color: #e9c46a;
+}
+
+
+/* =========================
+   ЗАГОЛОВКИ
+========================= */
+
+.section-title {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    max-width: 750px;
+
+    color: #a9b8bb;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   КАРТОЧКИ
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: #10232c;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(233,196,106,0.4);
+}
+
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #a9b8bb;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin: 50px 0;
+}
+
+.timeline-item {
+    background: #10232c;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+.timeline-year {
+    color: #e9c46a;
+
+    font-size: 35px;
+
+    font-weight: 900;
+}
+
+.timeline-item p {
+    color: #a9b8bb;
+}
+
+.timeline-arrow {
+    color: #e9c46a;
+
+    font-size: 45px;
+}
+
+.center-word {
+    text-align: center;
+
+    font-size: 35px;
+
+    font-weight: 900;
+
+    color: #58c4c8;
+}
+
+
+/* =========================
+   RELOAD
+========================= */
+
+.reload {
+    background: #0d1e26;
+}
+
+.reload-table {
+    display: grid;
+
+    grid-template-columns:
+        1fr 80px 1fr;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.reload-column {
+    background: #10232c;
+
+    padding: 30px;
+}
+
+.reload-column h3 {
+    color: #e9c46a;
+
+    margin-bottom: 20px;
+}
+
+.reload-column p {
+    color: #c4d0d2;
+
+    margin: 12px 0;
+}
+
+.reload-middle {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e9c46a;
+
+    color: #08151c;
+
+    font-size: 30px;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   ПРОИЗВЕДЕНИЯ
+========================= */
+
+.works {
+    display: grid;
+
+    grid-template-columns:
+        300px 1fr;
+
+    gap: 25px;
+}
+
+.work-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.work-button {
+    width: 100%;
+
+    text-align: left;
+
+    background: #10232c;
+
+    color: #dce7e8;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 12px;
+
+    padding: 15px;
+}
+
+.work-button:hover,
+.work-button.active {
+    background: #e9c46a;
+
+    color: #08151c;
+}
+
+.work-content {
+    background: #10232c;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.work-content h3 {
+    color: #e9c46a;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.work-text {
+    color: #dce7e8;
+
+    white-space: pre-line;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   АУДИО
+========================= */
+
+.audio-player {
+    background: #0b1a21;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.audio-label {
+    color: #58c4c8;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.audio-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+}
+
+audio {
+    width: 100%;
+}
+
+
+/* =========================
+   ОТСТУПЛЕНИЯ
+========================= */
+
+.extract {
+    border-left:
+        3px solid #e9c46a;
+
+    padding-left: 18px;
+
+    margin-top: 15px;
+
+    color: #dce7e8;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   DIGITAL
+========================= */
+
+.digital {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(233,196,106,0.07),
+            rgba(39,125,161,0.08)
+        );
+}
+
+.platform {
+    background: #10232c;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    padding: 35px;
+}
+
+.platform-logo {
+    font-size: 32px;
+
+    font-weight: 900;
+
+    color: #e9c46a;
+}
+
+.platform-subtitle {
+    color: #a9b8bb;
+
+    margin-bottom: 30px;
+}
+
+.platform-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.platform-item {
+    background: #0b1a21;
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    border-radius: 15px;
+
+    padding: 20px 12px;
+
+    text-align: center;
+}
+
+.platform-item .emoji {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   AI
+========================= */
+
+.ai-box {
+    background: #10232c;
+
+    border:
+        1px solid rgba(88,196,200,0.25);
+
+    border-radius: 25px;
+
+    padding: 35px;
+}
+
+.ai-label {
+    display: inline-block;
+
+    background:
+        rgba(88,196,200,0.12);
+
+    color: #58c4c8;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.ai-question {
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.ai-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.ai-button {
+    background: #0b1a21;
+
+    color: #dce7e8;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    padding: 12px 16px;
+
+    border-radius: 12px;
+}
+
+.ai-button:hover {
+    border-color: #58c4c8;
+
+    color: #58c4c8;
+}
+
+.ai-answer {
+    margin-top: 25px;
+
+    background: #0b1a21;
+
+    border-left:
+        3px solid #58c4c8;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    color: #dce7e8;
+
+    min-height: 60px;
+}
+
+
+/* =========================
+   TODAY
+========================= */
+
+.today-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.today-card {
+    background: #10232c;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.today-card h3 {
+    color: #e9c46a;
+
+    margin-bottom: 10px;
+}
+
+.today-card p {
+    color: #a9b8bb;
+}
+
+
+/* =========================
+   СОБСТВЕННАЯ МЫСЛЬ
+========================= */
+
+.thought-box {
+    max-width: 850px;
+
+    background: #10232c;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.thought-box p {
+    color: #a9b8bb;
+
+    margin-bottom: 20px;
+}
+
+
+/* ВАЖНО: ПОЛЕ ДОЛЖНО БЫТЬ КЛИКАБЕЛЬНЫМ */
+
+#thought {
+    display: block;
+
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    min-height: 180px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    resize: vertical;
+
+    border:
+        2px solid rgba(255,255,255,0.15);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: #0b1a21;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    cursor: text;
+
+    pointer-events: auto;
+
+    user-select: text;
+
+    -webkit-user-select: text;
+
+    opacity: 1;
+}
+
+#thought:focus {
+    border-color: #e9c46a;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(233,196,106,0.12);
+}
+
+#thought::placeholder {
+    color: #829397;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050d12;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    padding: 45px 6%;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    color: #e9c46a;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.footer-author {
+    color: #a9b8bb;
+}
+
+.footer-author strong {
+    color: #f5f0e6;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   АДАПТИВ
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-arrow {
+        text-align: center;
+
+        transform: rotate(90deg);
+    }
+
+    .cards,
+    .today-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .cards,
+    .today-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reload-table {
+        grid-template-columns: 1fr;
+    }
+
+    .reload-middle {
+        padding: 15px;
+    }
+
+    .platform-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+ALTYNSARIN DIGITAL
+</div>
+
+
+<div class="nav-links">
+
+<a href="#home"
+data-kk="Басты бет"
+data-ru="Главная"
+data-en="Home">
+Басты бет
+</a>
+
+<a href="#heritage"
+data-kk="Мұра"
+data-ru="Наследие"
+data-en="Heritage">
+Мұра
+</a>
+
+<a href="#works"
+data-kk="Шығармалар"
+data-ru="Произведения"
+data-en="Works">
+Шығармалар
+</a>
+
+<a href="#extracts"
+data-kk="Үзінділер"
+data-ru="Отрывки"
+data-en="Excerpts">
+Үзінділер
+</a>
+
+<a href="#ai"
+data-kk="AI"
+data-ru="AI"
+data-en="AI">
+AI
+</a>
+
+<a href="#thought-section"
+data-kk="Ойың"
+data-ru="Мысль"
+data-en="Thought">
+Ойың
+</a>
+
+</div>
+
+
+<div class="languages">
+
+<button class="lang-btn active" data-lang="kk">
+ҚАЗ
+</button>
+
+<button class="lang-btn" data-lang="ru">
+РУС
+</button>
+
+<button class="lang-btn" data-lang="en">
+ENG
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-small">
+1864 → 2026
+</div>
+
+<h1>
+ALTYNSARIN<br>
+<span>DIGITAL</span>
+</h1>
+
+
+<div
+class="hero-question"
+data-kk="Егер бәрі өзгерсе, не өзгермей қалады?"
+data-ru="Если всё изменится, что останется неизменным?"
+data-en="If everything changes, what will remain unchanged?">
+
+Егер бәрі өзгерсе, не өзгермей қалады?
+
+</div>
+
+
+<p
+class="hero-description"
+data-kk="Ыбырай Алтынсариннің білім туралы идеяларын XXI ғасырдың цифрлық әлемімен байланыстыратын интерактивті білім беру жобасы."
+data-ru="Интерактивный образовательный проект, который связывает идеи Ыбырая Алтынсарина об образовании с цифровым миром XXI века."
+data-en="An interactive educational project connecting Ybyrai Altynsarin's ideas about education with the digital world of the 21st century.">
+
+Ыбырай Алтынсариннің білім туралы идеяларын XXI ғасырдың цифрлық әлемімен байланыстыратын интерактивті білім беру жобасы.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button
+type="button"
+id="startResearch"
+class="btn btn-primary"
+data-kk="Зерттеуді бастау"
+data-ru="Начать исследование"
+data-en="Start exploring">
+
+Зерттеуді бастау
+
+</button>
+
+
+<button
+type="button"
+id="openAI"
+class="btn btn-secondary"
+data-kk="AI прототипі"
+data-ru="AI-прототип"
+data-en="AI prototype">
+
+AI прототипі
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HERITAGE
+========================= -->
+
+<section id="heritage">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Мұрадан — болашаққа"
+data-ru="От наследия — к будущему"
+data-en="From heritage to the future">
+
+Мұрадан — болашаққа
+
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="Алтынсариннің басты идеясы — білім арқылы адамның және қоғамның дамуы."
+data-ru="Главная идея Алтынсарина — развитие человека и общества через образование."
+data-en="Altynsarin's main idea was the development of people and society through education.">
+
+Алтынсариннің басты идеясы — білім арқылы адамның және қоғамның дамуы.
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">
+📚
+</div>
+
+<h3
+data-kk="Білім"
+data-ru="Знание"
+data-en="Knowledge">
+Білім
+</h3>
+
+<p
+data-kk="Білім адамға жаңа мүмкіндіктер ашады."
+data-ru="Знание открывает человеку новые возможности."
+data-en="Knowledge opens new opportunities for people.">
+Білім адамға жаңа мүмкіндіктер ашады.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+🏫
+</div>
+
+<h3
+data-kk="Мектеп"
+data-ru="Школа"
+data-en="School">
+Мектеп
+</h3>
+
+<p
+data-kk="Мектеп — адамның білім алып, тұлға болып қалыптасатын ортасы."
+data-ru="Школа — среда, где человек получает знания и формируется как личность."
+data-en="School is an environment where a person learns and develops as a personality.">
+
+Мектеп — адамның білім алып, тұлға болып қалыптасатын ортасы.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+💡
+</div>
+
+<h3
+data-kk="Ой"
+data-ru="Мышление"
+data-en="Thinking">
+Ой
+</h3>
+
+<p
+data-kk="Білім тек ақпарат емес, адамның ойлау қабілетін дамытады."
+data-ru="Образование — это не только информация, но и развитие мышления."
+data-en="Education is not only information, but also the development of thinking.">
+
+Білім тек ақпарат емес, адамның ойлау қабілетін дамытады.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+1864
+</div>
+
+<h3>
+Алғашқы мектеп
+</h3>
+
+<p>
+Ыбырай Алтынсарин Торғайда алғашқы қазақ мектебін ашты.
+</p>
+
+</div>
+
+
+<div class="timeline-arrow">
+→
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2026
+</div>
+
+<h3>
+Цифрлық мектеп
+</h3>
+
+<p>
+Бүгін білім кітаппен қатар смартфон, компьютер және цифрлық платформалар арқылы да беріледі.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="center-word">
+БІЛІМ
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RELOAD
+========================= -->
+
+<section class="reload">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Қайта жүктеу"
+data-ru="Перезагрузка"
+data-en="Reload">
+
+Қайта жүктеу
+
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="Уақыт өзгерді. Құралдар өзгерді. Бірақ білімнің мақсаты өзгерген жоқ."
+data-ru="Время изменилось. Инструменты изменились. Но цель образования не изменилась."
+data-en="Time changed. Tools changed. But the purpose of education did not.">
+
+Уақыт өзгерді. Құралдар өзгерді. Бірақ білімнің мақсаты өзгерген жоқ.
+
+</p>
+
+
+<div class="reload-table">
+
+
+<div class="reload-column">
+
+<h3>БҰРЫН</h3>
+
+<p>📖 Кітап</p>
+
+<p>✍️ Қалам</p>
+
+<p>🏫 Мектеп</p>
+
+<p>👨‍🏫 Мұғалім</p>
+
+</div>
+
+
+<div class="reload-middle">
+→
+</div>
+
+
+<div class="reload-column">
+
+<h3>ҚАЗІР</h3>
+
+<p>📱 Смартфон</p>
+
+<p>💻 Компьютер</p>
+
+<p>🌐 Интернет</p>
+
+<p>🤖 Жасанды интеллект</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WORKS
+========================= -->
+
+<section id="works">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Бір мұра — бірнеше мүмкіндік"
+data-ru="Одно наследие — несколько возможностей"
+data-en="One legacy — many possibilities">
+
+Бір мұра — бірнеше мүмкіндік
+
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="Алтынсарин шығармаларын оқу, тыңдау, талдау және өз ойыңды қалыптастыруға болады."
+data-ru="Произведения Алтынсарина можно читать, слушать, анализировать и формировать собственное мнение."
+data-en="Altynsarin's works can be read, listened to, analyzed and discussed.">
+
+Алтынсарин шығармаларын оқу, тыңдау, талдау және өз ойыңды қалыптастыруға болады.
+
+</p>
+
+
+<div class="works">
+
+
+<div class="work-list">
+
+<button
+class="work-button active"
+data-work="0">
+«Кел, балалар, оқылық!»
+</button>
+
+
+<button
+class="work-button"
+data-work="1">
+«Өнер-білім бар жұрттар»
+</button>
+
+
+<button
+class="work-button"
+data-work="2">
+«Әке мен бала»
+</button>
+
+
+<button
+class="work-button"
+data-work="3">
+«Бай баласы мен жарлы баласы»
+</button>
+
+
+<button
+class="work-button"
+data-work="4">
+«Мейірімді бала»
+</button>
+
+
+<button
+class="work-button"
+data-work="5">
+«Таза бұлақ»
+</button>
+
+</div>
+
+
+<div class="work-content">
+
+<h3 id="workTitle">
+«Кел, балалар, оқылық!»
+</h3>
+
+
+<p
+id="workText"
+class="work-text">
+
+Ыбырай Алтынсарин балаларды білім алуға, оқуға және жаңа мүмкіндіктерге ұмтылуға шақырады.
+
+Бүгін бұл идеяны цифрлық біліммен байланыстыруға болады: технология білім алуды жеңілдетеді, бірақ адамның өз талпынысы маңызды.
+
+</p>
+
+
+<div class="extract">
+
+<strong
+data-kk="Қысқа үзінді:"
+data-ru="Короткий отрывок:"
+data-en="Short excerpt:">
+Қысқа үзінді:
+</strong>
+
+<br>
+
+<span id="workExtract">
+
+«Бір Аллаға сиынып,
+Кел, балалар, оқылық!»
+
+</span>
+
+</div>
+
+
+<br>
+
+
+<div class="audio-player">
+
+<div
+class="audio-label"
+data-kk="🎧 Аудио үзінді"
+data-ru="🎧 Аудиофрагмент"
+data-en="🎧 Audio excerpt">
+
+🎧 Аудио үзінді
+
+</div>
+
+
+<div class="audio-buttons">
+
+<button
+id="playAudio"
+class="btn btn-primary"
+type="button">
+
+▶ Тыңдау
+
+</button>
+
+
+<button
+id="pauseAudio"
+class="btn btn-secondary"
+type="button">
+
+⏸ Пауза
+
+</button>
+
+
+<button
+id="stopAudio"
+class="btn btn-secondary"
+type="button">
+
+⏹ Тоқтату
+
+</button>
+
+</div>
+
+
+<audio
+id="audioPlayer"
+controls>
+</audio>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EXTRACTS
+========================= -->
+
+<section id="extracts">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Шығармалардан үзінділер"
+data-ru="Отрывки из произведений"
+data-en="Excerpts from the works">
+
+Шығармалардан үзінділер
+
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="Алтынсарин шығармаларындағы білім, еңбек және адамгершілік идеялары."
+data-ru="Идеи образования, труда и человечности в произведениях Алтынсарина."
+data-en="Ideas of education, work and humanity in Altynsarin's works.">
+
+Алтынсарин шығармаларындағы білім, еңбек және адамгершілік идеялары.
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">
+📖
+</div>
+
+<h3>
+«Кел, балалар, оқылық!»
+</h3>
+
+<p class="extract">
+«Бір Аллаға сиынып,<br>
+Кел, балалар, оқылық!»
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+💡
+</div>
+
+<h3>
+«Өнер-білім бар жұрттар»
+</h3>
+
+<p class="extract">
+«Өнер-білім бар жұрттар<br>
+Тастан сарай салғызды.»
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+💧
+</div>
+
+<h3>
+«Таза бұлақ»
+</h3>
+
+<p class="extract">
+«Бір Аллаға сиынып,<br>
+Кел, балалар, оқылық!»
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+👨‍👦
+</div>
+
+<h3>
+«Әке мен бала»
+</h3>
+
+<p
+data-kk="Еңбек пен жауапкершілік туралы тәрбиелік шығарма."
+data-ru="Поучительный рассказ о труде и ответственности."
+data-en="An educational story about work and responsibility.">
+
+Еңбек пен жауапкершілік туралы тәрбиелік шығарма.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+🤝
+</div>
+
+<h3>
+«Мейірімді бала»
+</h3>
+
+<p
+data-kk="Мейірімділік пен адамгершіліктің маңызын көрсетеді."
+data-ru="Показывает значение доброты и человечности."
+data-en="Shows the importance of kindness and humanity.">
+
+Мейірімділік пен адамгершіліктің маңызын көрсетеді.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+🌱
+</div>
+
+<h3
+data-kk="Негізгі құндылықтар"
+data-ru="Главные ценности"
+data-en="Main values">
+
+Негізгі құндылықтар
+
+</h3>
+
+<p
+data-kk="Білім • еңбек • адамгершілік • ізденіс"
+data-ru="Знание • труд • человечность • стремление к развитию"
+data-en="Knowledge • work • humanity • development">
+
+Білім • еңбек • адамгершілік • ізденіс
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIGITAL PLATFORM
+========================= -->
+
+<section class="digital">
+
+<div class="container">
+
+<h2 class="section-title">
+ALTYNSARIN DIGITAL
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="Алтынсарин мұрасын қазіргі оқушыға жақындататын цифрлық білім беру идеясы."
+data-ru="Идея цифровой образовательной платформы, которая делает наследие Алтынсарина ближе современному ученику."
+data-en="A digital educational idea that brings Altynsarin's legacy closer to modern students.">
+
+Алтынсарин мұрасын қазіргі оқушыға жақындататын цифрлық білім беру идеясы.
+
+</p>
+
+
+<div class="platform">
+
+<div class="platform-logo">
+ALTYNSARIN DIGITAL
+</div>
+
+
+<div class="platform-subtitle">
+Мұра • Білім • Болашақ
+</div>
+
+
+<div class="platform-grid">
+
+
+<div class="platform-item">
+<span class="emoji">📖</span>
+Оқу
+</div>
+
+
+<div class="platform-item">
+<span class="emoji">🎧</span>
+Тыңдау
+</div>
+
+
+<div class="platform-item">
+<span class="emoji">🎨</span>
+Көру
+</div>
+
+
+<div class="platform-item">
+<span class="emoji">🤖</span>
+Түсіну
+</div>
+
+
+<div class="platform-item">
+<span class="emoji">💭</span>
+Ойлану
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AI
+========================= -->
+
+<section id="ai">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Жасанды интеллект және адам"
+data-ru="Искусственный интеллект и человек"
+data-en="Artificial intelligence and humans">
+
+Жасанды интеллект және адам
+
+</h2>
+
+
+<p
+class="section-subtitle"
+data-kk="AI ақпаратты түсіндіре алады. Бірақ ойлау мен шешім қабылдау адамның міндеті."
+data-ru="ИИ может объяснять информацию. Но мышление и решение остаются задачей человека."
+data-en="AI can explain information. But thinking and decision-making remain human responsibilities.">
+
+AI ақпаратты түсіндіре алады. Бірақ ойлау мен шешім қабылдау адамның міндеті.
+
+</p>
+
+
+<div class="ai-box">
+
+<div class="ai-label">
+AI PROTOTYPE
+</div>
+
+
+<div
+class="ai-question"
+data-kk="Алтынсариннің идеялары бүгін бізге не бере алады?"
+data-ru="Что идеи Алтынсарина могут дать нам сегодня?"
+data-en="What can Altynsarin's ideas give us today?">
+
+Алтынсариннің идеялары бүгін бізге не бере алады?
+
+</div>
+
+
+<div class="ai-buttons">
+
+<button
+class="ai-button"
+data-ai="0">
+💡 Білім
+</button>
+
+<button
+class="ai-button"
+data-ai="1">
+🏫 Мектеп
+</button>
+
+<button
+class="ai-button"
+data-ai="2">
+🤖 AI
+</button>
+
+<button
+class="ai-button"
+data-ai="3">
+🚀 Болашақ
+</button>
+
+</div>
+
+
+<div
+class="ai-answer"
+id="aiAnswer">
+
+Сұрақты таңдаңыз.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TODAY
+========================= -->
+
+<section>
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Алтынсарин бүгін"
+data-ru="Алтынсарин сегодня"
+data-en="Altynsarin today">
+
+Алтынсарин бүгін
+
+</h2>
+
+
+<div class="today-grid">
+
+
+<div class="today-card">
+
+<h3>📱 Цифрлық білім</h3>
+
+<p
+data-kk="Білім енді тек кітапта емес. Біз оны телефоннан, компьютерден және онлайн платформалардан аламыз."
+data-ru="Знания теперь не только в книгах. Мы получаем их через телефоны, компьютеры и онлайн-платформы."
+data-en="Knowledge is no longer only in books. We get it through phones, computers and online platforms.">
+
+Білім енді тек кітапта емес. Біз оны телефоннан, компьютерден және онлайн платформалардан аламыз.
+
+</p>
+
+</div>
+
+
+<div class="today-card">
+
+<h3>🌍 Ашық әлем</h3>
+
+<p
+data-kk="Бүгін оқушы әлемнің кез келген жеріндегі ақпаратқа бірнеше секундта қол жеткізе алады."
+data-ru="Сегодня ученик может получить доступ к информации из любой точки мира за несколько секунд."
+data-en="Today a student can access information from anywhere in the world within seconds.">
+
+Бүгін оқушы әлемнің кез келген жеріндегі ақпаратқа бірнеше секундта қол жеткізе алады.
+
+</p>
+
+</div>
+
+
+<div class="today-card">
+
+<h3>🧠 Сыни ойлау</h3>
+
+<p
+data-kk="Ақпарат көп болған сайын оны тексеру, салыстыру және өз қорытындыңды жасау маңызды."
+data-ru="Чем больше информации, тем важнее проверять её, сравнивать и делать собственные выводы."
+data-en="The more information we have, the more important it is to verify, compare and draw our own conclusions.">
+
+Ақпарат көп болған сайын оны тексеру, салыстыру және өз қорытындыңды жасау маңызды.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     THOUGHT
+========================= -->
+
+<section id="thought-section">
+
+<div class="container">
+
+<h2
+class="section-title"
+data-kk="Ал сен не ойлайсың?"
+data-ru="А что думаешь ты?"
+data-en="What do you think?">
+
+Ал сен не ойлайсың?
+
+</h2>
+
+
+<div class="thought-box">
+
+<p
+data-kk="«Білім» сен үшін нені білдіреді?"
+data-ru="Что для тебя значит «образование»?"
+data-en="What does «education» mean to you?">
+
+«Білім» сен үшін нені білдіреді?
+
+</p>
+
+
+<textarea
+id="thought"
+rows="8"
+placeholder="Менің ойымша..."
+autocomplete="off"
+spellcheck="true">
+</textarea>
+
+
+<button
+type="button"
+id="saveThought"
+class="btn btn-primary"
+data-kk="Сақтау"
+data-ru="Сохранить"
+data-en="Save">
+
+Сақтау
+
+</button>
+
+
+<p
+id="thoughtMessage"
+style="margin-top:15px;color:#58c4c8;">
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section>
+
+<div class="container" style="text-align:center;">
+
+<div class="hero-small">
+1864 → 2026 → ?
+</div>
+
+
+<h2
+style="font-size:clamp(40px,7vw,75px);margin-bottom:20px;"
+data-kk="БОЛАШАҚТЫ БІЗ ЖАСАЙМЫЗ"
+data-ru="БУДУЩЕЕ СОЗДАЁМ МЫ"
+data-en="WE CREATE THE FUTURE">
+
+БОЛАШАҚТЫ БІЗ ЖАСАЙМЫЗ
+
+</h2>
+
+
+<p
+style="font-size:20px;color:#a9b8bb;max-width:800px;margin:auto;"
+data-kk="Технология өзгереді. Құралдар өзгереді. Әлем өзгереді. Ал білімнің құндылығы өзгермейді."
+data-ru="Технологии меняются. Инструменты меняются. Мир меняется. Но ценность образования не меняется."
+data-en="Technology changes. Tools change. The world changes. But the value of education remains.">
+
+Технология өзгереді. Құралдар өзгереді. Әлем өзгереді. Ал білімнің құндылығы өзгермейді.
+
+</p>
+
+
+<br>
+
+
+<p
+style="font-size:22px;color:#e9c46a;font-weight:700;"
+data-kk="«Жасанды интеллект — құрал. Ойлау — адамның міндеті.»"
+data-ru="«Искусственный интеллект — инструмент. Мышление — задача человека.»"
+data-en="“Artificial intelligence is a tool. Thinking is a human responsibility.”">
+
+«Жасанды интеллект — құрал. Ойлау — адамның міндеті.»
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-container">
+
+
+<div class="footer-logo">
+ALTYNSARIN DIGITAL
+</div>
+
+
+<div class="footer-author">
+
+<div
+data-kk="Жобаны әзірлеген:"
+data-ru="Разработано:"
+data-en="Developed by:">
+
+Разработано:
+
+</div>
+
+
+<strong>
+Баязиева Дильназ
+</strong>
+
+
+<br>
+
+
+<span
+data-kk="10-сынып оқушысы"
+data-ru="ученица 10 класса"
+data-en="10th grade student">
+
+ученица 10 класса
+
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   ЯЗЫК
+========================================= */
+
+let currentLanguage = "kk";
+
+const languageButtons =
+    document.querySelectorAll(".lang-btn");
+
+
+function changeLanguage(lang) {
+
+    currentLanguage = lang;
+
+    document.documentElement.lang = lang;
+
+
+    languageButtons.forEach(button => {
+
+        button.classList.toggle(
+            "active",
+            button.dataset.lang === lang
+        );
+
+    });
+
+
+    document.querySelectorAll("[data-kk]")
+        .forEach(element => {
+
+            const value =
+                element.dataset[lang];
+
+            if (value !== undefined) {
+
+                element.textContent = value;
+
+            }
+
+        });
+
+
+    updateThoughtPlaceholder();
+
+    updateWork();
+
+}
+
+
+languageButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            changeLanguage(
+                button.dataset.lang
+            );
+
+        }
+    );
+
+});
+
+
+function updateThoughtPlaceholder() {
+
+    const placeholders = {
+
+        kk: "Менің ойымша...",
+
+        ru: "Я думаю, что...",
+
+        en: "I think that..."
+
+    };
+
+
+    document.getElementById("thought")
+        .placeholder =
+        placeholders[currentLanguage];
+
+}
+
+
+/* =========================================
+   ПРОИЗВЕДЕНИЯ
+========================================= */
+
+const works = [
+
+{
+
+title:
+"«Кел, балалар, оқылық!»",
+
+text: {
+
+kk:
+"Ыбырай Алтынсарин балаларды білім алуға, оқуға және жаңа мүмкіндіктерге ұмтылуға шақырады.\n\nБүгін бұл идеяны цифрлық біліммен байланыстыруға болады: технология білім алуды жеңілдетеді, бірақ адамның өз талпынысы маңызды.",
+
+ru:
+"Ыбырай Алтынсарин призывает детей учиться, получать знания и стремиться к новым возможностям.\n\nСегодня эту идею можно связать с цифровым образованием: технологии делают обучение доступнее, но личное стремление человека остаётся главным.",
+
+en:
+"Ybyrai Altynsarin encourages children to learn, gain knowledge and seek new opportunities.\n\nToday this idea can be connected with digital education: technology makes learning easier, but personal effort remains important."
+
+},
+
+extract:
+"«Бір Аллаға сиынып, Кел, балалар, оқылық!»",
+
+audio:
+"audio/kel-balalar.mp3"
+
+},
+
+
+{
+
+title:
+"«Өнер-білім бар жұрттар»",
+
+text: {
+
+kk:
+"Шығармада білім мен өнердің қоғамды алға жылжытатыны көрсетіледі.",
+
+ru:
+"В произведении показано, что знания и образование двигают общество вперёд.",
+
+en:
+"The work shows that knowledge and education move society forward."
+
+},
+
+extract:
+"«Өнер-білім бар жұрттар Тастан сарай салғызды.»",
+
+audio:
+"audio/oner-bilim.mp3"
+
+},
+
+
+{
+
+title:
+"«Әке мен бала»",
+
+text: {
+
+kk:
+"Әңгімеде еңбекке жауапкершілікпен қараудың маңызы көрсетіледі.",
+
+ru:
+"В рассказе показано значение ответственного отношения к труду.",
+
+en:
+"The story shows the importance of responsibility towards work."
+
+},
+
+extract:
+"Еңбек пен жауапкершілік — шығарманың негізгі тәрбиелік идеяларының бірі.",
+
+audio:
+"audio/ake-bala.mp3"
+
+},
+
+
+{
+
+title:
+"«Бай баласы мен жарлы баласы»",
+
+text: {
+
+kk:
+"Шығармада өмірлік тәжірибе, еңбек және қиындыққа дайын болудың маңызы көрсетіледі.",
+
+ru:
+"В произведении показано значение жизненного опыта, труда и готовности к трудностям.",
+
+en:
+"The work shows the importance of life experience, work and being ready for difficulties."
+
+},
+
+extract:
+"Шығарма еңбек пен өмірлік тәжірибенің маңызын көрсетеді.",
+
+audio:
+"audio/bai-balasy.mp3"
+
+},
+
+
+{
+
+title:
+"«Мейірімді бала»",
+
+text: {
+
+kk:
+"Шығарма адамгершілік пен мейірімділіктің маңызын көрсетеді.",
+
+ru:
+"Произведение показывает значение доброты и человечности.",
+
+en:
+"The work shows the importance of kindness and humanity."
+
+},
+
+extract:
+"Мейірімділік — адам бойындағы маңызды қасиеттердің бірі.",
+
+audio:
+"audio/meirimdi-bala.mp3"
+
+},
+
+
+{
+
+title:
+"«Таза бұлақ»",
+
+text: {
+
+kk:
+"«Таза бұлақ» адам бойындағы жақсы қасиеттер туралы ойлануға шақырады.",
+
+ru:
+"«Таза бұлақ» заставляет задуматься о хороших качествах человека.",
+
+en:
+"“Taza Bulak” encourages us to think about good qualities in a person."
+
+},
+
+extract:
+"«Таза бұлақ» — адамгершілік пен ішкі тазалық туралы шығарма.",
+
+audio:
+"audio/taza-bulak.mp3"
+
+}
+
+];
+
+
+let currentWork = 0;
+
+
+const workButtons =
+    document.querySelectorAll(".work-button");
+
+const workTitle =
+    document.getElementById("workTitle");
+
+const workText =
+    document.getElementById("workText");
+
+const workExtract =
+    document.getElementById("workExtract");
+
+const audioPlayer =
+    document.getElementById("audioPlayer");
+
+
+function updateWork() {
+
+    const work =
+        works[currentWork];
+
+
+    workTitle.textContent =
+        work.title;
+
+
+    workText.textContent =
+        work.text[currentLanguage];
+
+
+    workExtract.textContent =
+        work.extract;
+
+
+    audioPlayer.src =
+        work.audio;
+
+
+    workButtons.forEach(
+        (button, index) => {
+
+            button.classList.toggle(
+                "active",
+                index === currentWork
+            );
+
+        }
+    );
+
+}
+
+
+workButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            currentWork =
+                Number(
+                    this.dataset.work
+                );
+
+
+            audioPlayer.pause();
+
+            audioPlayer.currentTime = 0;
+
+            updateWork();
+
+        }
+    );
+
+});
+
+
+/* =========================================
+   АУДИО
+========================================= */
+
+document
+    .getElementById("playAudio")
+    .addEventListener(
+        "click",
+        function() {
+
+            audioPlayer.play();
+
+        }
+    );
+
+
+document
+    .getElementById("pauseAudio")
+    .addEventListener(
+        "click",
+        function() {
+
+            audioPlayer.pause();
+
+        }
+    );
+
+
+document
+    .getElementById("stopAudio")
+    .addEventListener(
+        "click",
+        function() {
+
+            audioPlayer.pause();
+
+            audioPlayer.currentTime = 0;
+
+        }
+    );
+
+
+/* =========================================
+   AI
+========================================= */
+
+const aiAnswers = [
+
+{
+
+kk:
+"Білім адамға өз мүмкіндігін түсінуге, ойлауға және болашағын таңдауға көмектеседі.",
+
+ru:
+"Образование помогает человеку раскрывать свои возможности, думать и выбирать своё будущее.",
+
+en:
+"Education helps people discover their abilities, think independently and choose their future."
+
+},
+
+
+{
+
+kk:
+"Мектеп — тек сабақ өтетін орын емес. Ол адамның тұлға болып қалыптасатын ортасы.",
+
+ru:
+"Школа — это не просто место для уроков. Это среда, в которой формируется личность.",
+
+en:
+"School is not only a place for lessons. It is an environment where a person develops."
+
+},
+
+
+{
+
+kk:
+"Жасанды интеллект ақпаратты іздеуге және түсіндіруге көмектеседі. Бірақ адамның орнына ойламауы керек.",
+
+ru:
+"Искусственный интеллект помогает искать и объяснять информацию. Но он не должен думать вместо человека.",
+
+en:
+"Artificial intelligence can help find and explain information. But it should not think instead of a person."
+
+},
+
+
+{
+
+kk:
+"Болашақ технологияға ғана емес, оны қалай қолданатын адамға байланысты.",
+
+ru:
+"Будущее зависит не только от технологий, но и от людей, которые ими пользуются.",
+
+en:
+"The future depends not only on technology, but also on the people who use it."
+
+}
+
+];
+
+
+document
+    .querySelectorAll(".ai-button")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const index =
+                    Number(
+                        this.dataset.ai
+                    );
+
+
+                document
+                    .getElementById("aiAnswer")
+                    .textContent =
+                    aiAnswers[index][
+                        currentLanguage
+                    ];
+
+            }
+        );
+
+    });
+
+
+/* =========================================
+   КНОПКИ В HERO
+========================================= */
+
+document
+    .getElementById("startResearch")
+    .addEventListener(
+        "click",
+        function() {
+
+            document
+                .getElementById("heritage")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+    );
+
+
+document
+    .getElementById("openAI")
+    .addEventListener(
+        "click",
+        function() {
+
+            document
+                .getElementById("ai")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+    );
+
+
+/* =========================================
+   СОБСТВЕННАЯ МЫСЛЬ
+========================================= */
+
+const thought =
+    document.getElementById("thought");
+
+
+const saveThought =
+    document.getElementById("saveThought");
+
+
+const thoughtMessage =
+    document.getElementById("thoughtMessage");
+
+
+const saved =
+    localStorage.getItem(
+        "altynsarinThought"
+    );
+
+
+if (saved) {
+
+    thought.value = saved;
+
+}
+
+
+saveThought.addEventListener(
+    "click",
+    function() {
+
+        const value =
+            thought.value.trim();
+
+
+        if (!value) {
+
+            const messages = {
+
+                kk:
+                "Алдымен өз ойыңызды жазыңыз.",
+
+                ru:
+                "Сначала напишите свою мысль.",
+
+                en:
+                "Write your thought first."
+
+            };
+
+
+            thoughtMessage.textContent =
+                messages[currentLanguage];
+
+            return;
+
+        }
+
+
+        localStorage.setItem(
+            "altynsarinThought",
+            value
+        );
+
+
+        const messages = {
+
+            kk:
+            "✓ Ойыңыз сақталды!",
+
+            ru:
+            "✓ Ваша мысль сохранена!",
+
+            en:
+            "✓ Your thought has been saved!"
+
+        };
+
+
+        thoughtMessage.textContent =
+            messages[currentLanguage];
+
+    }
+);
+
+
+/* =========================================
+   ЗАПУСК
+========================================= */
+
+updateWork();
+
+updateThoughtPlaceholder();
+
+</script>
+
+</body>
+</html>
